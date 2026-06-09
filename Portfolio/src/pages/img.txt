@@ -1,303 +1,127 @@
-import { useState, useEffect, useRef } from 'react'
+import cv from '../assets/CV.pdf'
 
-const headerStyles = `
-  .header__nav {
-    width: 90%;
-    display: flex;
-    margin: 0 auto;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+const landingStyles = `
+  @keyframes landing-fade-up {
+    from { opacity: 0; transform: translateY(28px); filter: blur(4px); }
+    to   { opacity: 1; transform: translateY(0);    filter: blur(0);   }
+  }
+  @keyframes landing-badge-in {
+    from { opacity: 0; transform: translateY(10px) scale(0.94); filter: blur(3px); }
+    to   { opacity: 1; transform: translateY(0) scale(1);       filter: blur(0);   }
+  }
+  @keyframes landing-line-grow {
+    from { transform: scaleX(0); opacity: 0; }
+    to   { transform: scaleX(1); opacity: 1; }
   }
 
-  /* ── Logo ── */
-  .run svg { width: 25px; height: 25px; fill: #E5E5E5; }
-  .run {
-    display: flex; flex-direction: row;
-    font-size: 20px; justify-content: center; align-items: center;
+  .land-item {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
-
-  /* ── Desktop nav list ── */
-  .header__nav-list { display: flex; gap: 10px; }
-
-  .header__link {
-    font-family: "Geist", sans-serif;
-    font-size: 15px; color: #b5b5b5; font-weight: 500;
-    padding: 4px 10px; border-radius: 8px; transition: all 0.2s ease;
+  .land-badge   { animation: landing-badge-in 0.7s 0.05s forwards cubic-bezier(0.22,1,0.36,1); }
+  .land-heading { animation: landing-fade-up  0.9s 0.20s forwards cubic-bezier(0.22,1,0.36,1); }
+  .land-para    { animation: landing-fade-up  0.9s 0.38s forwards cubic-bezier(0.22,1,0.36,1); }
+  .land-divider {
+    transform-origin: center;
+    animation: landing-line-grow 0.7s 0.52s forwards cubic-bezier(0.22,1,0.36,1);
+    opacity: 0;
   }
-  .header__link--active { color: #e5e5e5; }
-  .header__link:hover { background-color: #141416; color: #e5e5e5; }
+  .land-ctas { animation: landing-fade-up 0.9s 0.6s forwards cubic-bezier(0.22,1,0.36,1); }
 
-  /* ── Controls ── */
-  .header__controls { display: flex; gap: 15px; align-items: center; }
-
-  /* ── Hire Me button ── */
-  .header__btn {
-    width: 83px; height: 32px; border: 0;
-    font-size: 14px; font-weight: 500;
-    background-color: #E5E5E5; color: #171717;
-    border-radius: 8px; cursor: pointer;
+  .landing-btn-primary {
     transition: background-color 0.25s ease, color 0.25s ease,
       transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease;
   }
-  .header__btn:hover {
+  .landing-btn-primary:hover {
     background-color: #fff; color: #000;
     transform: translateY(-1px);
-    box-shadow: 0 4px 18px rgba(229,229,229,0.18);
+    box-shadow: 0 4px 20px rgba(229,229,229,0.2);
+  }
+  .landing-btn-ghost {
+    transition: background-color 0.25s ease, color 0.25s ease,
+      transform 0.2s cubic-bezier(0.16,1,0.3,1), border-color 0.25s ease;
+  }
+  .landing-btn-ghost:hover {
+    background-color: #16171b; color: #E5E5E5;
+    transform: translateY(-1px); border-color: #3a3a3e;
   }
 
-  /* ── Theme toggle ── */
-  .header__theme-btn {
-    display: flex; align-items: center; justify-content: center;
-    width: 32px; height: 32px;
-    background: none; border: none; cursor: pointer; padding: 0;
-    color: #b5b5b5; border-radius: 8px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-  }
-  .header__theme-btn:hover { background-color: #141416; color: #e5e5e5; }
-  .header__theme-btn svg { width: 18px; height: 18px; }
+  /* ── Responsive ── */
 
-  /* ── Hamburger (mobile only) ── */
-  .header__hamburger-btn {
-    display: none;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    background: none; border: none; cursor: pointer; padding: 0;
-  }
-  .header__hamburger-icon {
-    display: flex; flex-direction: column;
-    justify-content: space-between;
-    width: 22px; height: 14px;
-  }
-  .header__hamburger-line {
-    width: 100%; height: 2px; background: #E5E5E5; border-radius: 2px;
-    transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),
-      opacity 0.3s ease;
-    transform-origin: center;
-  }
-  .hamburger-open .header__hamburger-line:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
-  .hamburger-open .header__hamburger-line:nth-child(2) { opacity: 0; }
-  .hamburger-open .header__hamburger-line:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-  }
-  .header__hamburger-label {
-    font-family: "Geist", sans-serif;
-    font-size: 14px; font-weight: 500; color: #b5b5b5;
-    transition: color 0.2s ease;
-    user-select: none;
-  }
-  .hamburger-open .header__hamburger-label { color: #e5e5e5; }
+  .landing-heading { font-size: 3rem; line-height: 1.1; }
+  .landing-para    { font-size: 18px; }
 
-  /* ── Mobile right controls (hire me + theme) ── */
-  .header__mobile-right {
-    display: none;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-  }
-
-  /* ── Mobile drawer ── */
-  .mobile-menu {
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: #0a0a0b; z-index: 190;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 32px;
-    opacity: 0; pointer-events: none;
-    transform: translateY(-12px);
-    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22,1,0.36,1);
-  }
-  .mobile-menu.open {
-    opacity: 1; pointer-events: all; transform: translateY(0);
-  }
-  .mobile-menu a {
-    font-size: 32px; font-weight: 600;
-    color: #b5b5b5; font-family: "Geist", sans-serif;
-    transition: color 0.2s ease;
-  }
-  .mobile-menu a:hover { color: #e5e5e5; }
-
-  /* ── Breakpoints ── */
   @media (max-width: 767px) {
-    .run { display: none; }
-    .header__nav-list { display: none; }
-    .header__controls { display: none; }
-    .header__hamburger-btn { display: flex; }
-    .header__mobile-right { display: flex; }
+    .landing-wrap    { width: 90%; }
+    .landing-heading { font-size: 2rem; line-height: 1.15; }
+    .landing-para    { font-size: 16px; }
   }
-
   @media (min-width: 768px) and (max-width: 1023px) {
-    .header__nav { width: 92%; }
-    .header__link { font-size: 14px; padding: 4px 8px; }
-    .header__btn { width: 76px; }
+    .landing-wrap    { width: 72%; }
+    .landing-heading { font-size: 2.6rem; }
   }
 `
 
-// Sun icon (light mode indicator)
-const SunIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-    <circle cx="12" cy="12" r="4.5"/>
-    <line x1="12" y1="2" x2="12" y2="4.5" strokeLinecap="round"/>
-    <line x1="12" y1="19.5" x2="12" y2="22" strokeLinecap="round"/>
-    <line x1="2" y1="12" x2="4.5" y2="12" strokeLinecap="round"/>
-    <line x1="19.5" y1="12" x2="22" y2="12" strokeLinecap="round"/>
-    <line x1="4.93" y1="4.93" x2="6.64" y2="6.64" strokeLinecap="round"/>
-    <line x1="17.36" y1="17.36" x2="19.07" y2="19.07" strokeLinecap="round"/>
-    <line x1="19.07" y1="4.93" x2="17.36" y2="6.64" strokeLinecap="round"/>
-    <line x1="6.64" y1="17.36" x2="4.93" y2="19.07" strokeLinecap="round"/>
-  </svg>
-)
-
-// Moon icon (dark mode indicator)
-const MoonIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-    <path strokeLinecap="round" strokeLinejoin="round"
-      d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
-  </svg>
-)
-
-function HeaderSec() {
-  const [hidden, setHidden] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [isDark, setIsDark] = useState(true)
-  const lastScrollY = useRef(0)
-  const ticking = useRef(false)
-
-  useEffect(() => {
-    function updateHeader() {
-      const y = window.scrollY
-      if (y > lastScrollY.current && y > 100) setHidden(true)
-      else if (y < lastScrollY.current) setHidden(false)
-      lastScrollY.current = y
-      ticking.current = false
-    }
-    function onScroll() {
-      if (!ticking.current) { window.requestAnimationFrame(updateHeader); ticking.current = true }
-    }
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [menuOpen])
-
+function LandingPageSection() {
   function handleNavClick(e, target) {
     e.preventDefault()
-    setMenuOpen(false)
-    document.querySelectorAll('.header__link').forEach(l => l.classList.remove('header__link--active'))
-    e.currentTarget.classList.add('header__link--active')
-    setTimeout(() => {
-      if (target === 'home') {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-      } else {
-        const section = document.getElementById(target)
-        if (section) {
-          const headerHeight = document.querySelector('header').offsetHeight
-          const top = section.getBoundingClientRect().top + window.scrollY - headerHeight - 12
-          window.scrollTo({ top, behavior: 'smooth' })
-        }
-      }
-    }, menuOpen ? 350 : 0)
+    const section = document.getElementById(target)
+    if (section) {
+      const headerHeight = document.querySelector('header').offsetHeight
+      const top = section.getBoundingClientRect().top + window.scrollY - headerHeight - 12
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
   }
-
-  const navLinks = [
-    { label: 'Home',    target: 'home' },
-    { label: 'Work',    target: 'work' },
-    { label: 'About',   target: 'about' },
-    { label: 'Tools',   target: 'stack' },
-    { label: 'Contact', target: 'footer' },
-  ]
 
   return (
     <>
-      <style>{headerStyles}</style>
+      <style>{landingStyles}</style>
+      <section id="home" className="w-full pt-36 pb-24 flex justify-center bg-[#0a0a0b]">
+        <div className="landing-wrap">
 
-      {/* Mobile drawer */}
-      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
-        {navLinks.map(({ label, target }) => (
-          <a key={target} href={`#${target}`} onClick={(e) => handleNavClick(e, target)}>
-            {label}
-          </a>
-        ))}
-      </div>
-
-      <header
-        className="bg-[#0a0a0b] py-2.5 px-0 w-full fixed top-0 z-200 border-[#515151] border-solid border-t-0 border-b-[0.5px] border-r-0 border-l-0"
-        style={{
-          transform: hidden ? 'translateY(-100%)' : 'translateY(0)',
-          transition: 'transform 0.3s ease-in-out',
-        }}
-      >
-        <nav className="header__nav">
-
-          {/* ── Logo (desktop/tablet only) ── */}
-          <a className="run" href="#home" onClick={(e) => handleNavClick(e, 'home')}>
-            <code className="text-[20px] tracking-[.8px]">Jonah.</code>  
+          <a href="" className="land-item land-badge py-1 px-3.5 rounded-full flex gap-2 items-center self-center text-[13.5px] bg-[#111114] border border-solid border-[#2a2a2e] text-[#B5B5B5] cursor-pointer hover:bg-[#16171b] transition-colors duration-300">
+            <svg className="h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+              <path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>
+            </svg>
+            <code>Open to work</code>
+            
           </a>
 
-          {/* ── Mobile: Hamburger + "Menu" label (left) ── */}
-          <button
-            className={`header__hamburger-btn ${menuOpen ? 'hamburger-open' : ''}`}
-            onClick={() => setMenuOpen(prev => !prev)}
-            aria-label="Toggle menu"
-          >
-            <span className="header__hamburger-icon">
-              <span className="header__hamburger-line" />
-              <span className="header__hamburger-line" />
-              <span className="header__hamburger-line" />
-            </span>
-            <span className="header__hamburger-label">Menu</span>
-          </button>
+          <h className="land-item land-heading landing-heading font-semibold text-[#E5E5E5] tracking-tight mt-3 mb-2.5">
+            Build with KemfonAbasi_
+          </h>
 
-          {/* ── Desktop nav list ── */}
-          <ul className="header__nav-list">
-            {navLinks.map(({ label, target }, i) => (
-              <li key={target}>
-                <a
-                  href={`#${target}`}
-                  className={`header__link${i === 0 ? ' header__link--active' : ''}`}
-                  onClick={(e) => handleNavClick(e, target)}
-                >
-                  <code>{label}</code>
-                  
-                </a>
-              </li>
-            ))}
-          </ul>
+          <p className="land-item land-para landing-para text-[#B5B5B5] leading-7 font-normal">
+            Crafting modern digital experiences focused on quality, performance, and professional web development standards.
+          </p>
 
-          {/* ── Desktop controls (Hire Me + theme toggle) ── */}
-          <div className="header__controls">
-            <button
-              className="header__theme-btn"
-              onClick={() => setIsDark(prev => !prev)}
-              aria-label="Toggle theme"
+          {/* <div className="land-divider w-12 h-px bg-[red] my-5 self-center" /> */}
+
+          <div className="land-item land-ctas flex gap-3 items-center justify-center flex-wrap mt-6">
+            <a
+              href="#work"
+              onClick={(e) => handleNavClick(e, 'work')}
+              className="landing-btn-primary flex justify-center items-center w-32 h-9 border-0 text-[14px] leading-5 bg-[#E5E5E5] text-[#111114] font-medium rounded-lg"
             >
-              {isDark ? <SunIcon /> : <MoonIcon />}
-            </button>
-            <button className="header__btn" id="open-cv-btn"><code>Hire Me</code></button>
+              <code>View My Work</code>
+              
+            </a>
+            <a
+              href={cv}
+              target="_blank"
+              rel="noreferrer"
+              className="landing-btn-ghost flex justify-center items-center w-32 h-9 text-[14px] leading-5 font-medium border border-solid border-[#2a2a2e] text-[#E5E5E5] rounded-lg cursor-pointer"
+            >
+              <code>Open Resume</code>
+            </a>
           </div>
 
-          {/* ── Mobile right controls (Hire Me + theme toggle) ── */}
-          <div className="header__mobile-right">
-            <button
-              className="header__theme-btn"
-              onClick={() => setIsDark(prev => !prev)}
-              aria-label="Toggle theme"
-            >
-              {isDark ? <SunIcon /> : <MoonIcon />}
-            </button>
-            <button className="header__btn" id="open-cv-btn-mobile">Hire Me</button>
-          </div>
-
-        </nav>
-      </header>
+        </div>
+      </section>
     </>
   )
 }
 
-export default HeaderSec
+export default LandingPageSection

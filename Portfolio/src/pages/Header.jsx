@@ -22,9 +22,9 @@ function HeaderSec() {
                 </svg>
                 <button className="cursor-pointer font-fira font-medium text-[15px] bg-[#f7f3f3] py-1.5 px-3.75 rounded-lg text-black" id="open-cv-btn-mobile">Hire Me</button>
                 <button className="bg-none border-none cursor-pointer flex flex-col gap-1.25" id="menuToggle">
-                    <span className='block w-5 h-[2px] bg-[#f7f3f3]'></span>
-                    <span className='block w-5 h-[2px] bg-[#f7f3f3]'></span>
-                    <span className='block w-5 h-[2px] bg-[#f7f3f3]'></span>
+                    <span className='block w-5 h-0.5 bg-[#f7f3f3]'></span>
+                    <span className='block w-5 h-0.5 bg-[#f7f3f3]'></span>
+                    <span className='block w-5 h-0.5 bg-[#f7f3f3]'></span>
                 </button>
             </div>
         </div> 
