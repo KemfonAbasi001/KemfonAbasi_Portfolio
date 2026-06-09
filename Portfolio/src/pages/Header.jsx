@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 function HeaderSec() {
   return (
     <>
-      <nav className="w-full flex justify-center items-center py-2.5 px-0 fixed top-0 z-200 border-[#515151] border-solid border-t-0 border-b-[0.5px] border-r-0 border-l-0">
+      <nav className="bg-[#0a0a0b] w-full flex justify-center items-center py-2.5 px-0 fixed top-0 z-200 border-[#515151] border-solid border-t-0 border-b-[0.5px] border-r-0 border-l-0">
         <div className="w-[90%] flex justify-between items-center mx-auto my-0">
             <a href="#" className="text-[24px] font-fira font-medium">Jonah.</a>
 

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import CoverPage from './pages/CoverPage'
 import HeaderSec from './pages/Header'
 import LandingPageSection from './pages/Landingpage'
+import Work from './pages/SelectedWork'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
       {/* <CoverPage/> */}
       <HeaderSec/>
       <LandingPageSection/>
+      <Work/>
     </>
   )
 }

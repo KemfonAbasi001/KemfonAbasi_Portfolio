@@ -1,120 +1,140 @@
-import cv from '../assets/CV.pdf'
+import { useEffect, useRef } from 'react'
 
-const landingStyles = `
-  @keyframes landing-fade-up {
-    from { opacity: 0; transform: translateY(28px); filter: blur(4px); }
-    to   { opacity: 1; transform: translateY(0);    filter: blur(0);   }
-  }
-  @keyframes landing-badge-in {
-    from { opacity: 0; transform: translateY(10px) scale(0.94); filter: blur(3px); }
-    to   { opacity: 1; transform: translateY(0) scale(1);       filter: blur(0);   }
-  }
-  @keyframes landing-line-grow {
-    from { transform: scaleX(0); opacity: 0; }
-    to   { transform: scaleX(1); opacity: 1; }
-  }
+import skinImg from '../assets/skin.png'
+import lastly from '../assets/lastly.png'
+import fyn from '../assets/fyn.png'
+import twitter from '../assets/twitter_post.png'
+import dine from '../assets/dine.png'
 
-  .land-item {
+const workStyles = `
+  .work-card {
     opacity: 0;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(40px);
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.2s ease;
   }
-  .land-badge   { animation: landing-badge-in 0.7s 0.05s forwards cubic-bezier(0.22,1,0.36,1); }
-  .land-heading { animation: landing-fade-up  0.9s 0.20s forwards cubic-bezier(0.22,1,0.36,1); }
-  .land-para    { animation: landing-fade-up  0.9s 0.38s forwards cubic-bezier(0.22,1,0.36,1); }
-  .land-divider {
-    transform-origin: center;
-    animation: landing-line-grow 0.7s 0.52s forwards cubic-bezier(0.22,1,0.36,1);
-    opacity: 0;
-  }
-  .land-ctas { animation: landing-fade-up 0.9s 0.6s forwards cubic-bezier(0.22,1,0.36,1); }
+  .work-card.in-view  { opacity: 1; transform: translateY(0); }
+  .work-card:hover    { border-color: #3a3a3e; }
 
-  .landing-btn-primary {
+  .work-card-img {
+    transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: center center;
+  }
+  .work-card:hover .work-card-img { transform: scale(1.1); }
+
+  .work-title-reveal {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .work-title-reveal.in-view { opacity: 1; transform: translateY(0); }
+
+  .view-all-btn {
     transition: background-color 0.25s ease, color 0.25s ease,
-      transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease;
+      border-color 0.25s ease, transform 0.2s cubic-bezier(0.16,1,0.3,1);
   }
-  .landing-btn-primary:hover {
-    background-color: #fff; color: #000;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(229,229,229,0.2);
-  }
-  .landing-btn-ghost {
-    transition: background-color 0.25s ease, color 0.25s ease,
-      transform 0.2s cubic-bezier(0.16,1,0.3,1), border-color 0.25s ease;
-  }
-  .landing-btn-ghost:hover {
-    background-color: #16171b; color: #E5E5E5;
-    transform: translateY(-1px); border-color: #3a3a3e;
+  .view-all-btn:hover {
+    background-color: #16171b; color: #B5B5B5;
+    border-color: #3a3a3e; transform: translateY(-1px);
   }
 
-  /* ── Responsive ── */
-
-  .landing-heading { font-size: 3rem; line-height: 1.1; }
-  .landing-para    { font-size: 18px; }
+  /* ── Grid responsive ── */
+  .work-grid { grid-template-columns: repeat(3, 1fr); }
 
   @media (max-width: 767px) {
-    .landing-wrap    { width: 90%; }
-    .landing-heading { font-size: 2rem; line-height: 1.15; }
-    .landing-para    { font-size: 16px; }
+    .work-grid { grid-template-columns: 1fr; gap: 50px; }
+    .work-section-heading { font-size: 28px; }
+    .work-section-para    { font-size: 15px; }
   }
   @media (min-width: 768px) and (max-width: 1023px) {
-    .landing-wrap    { width: 72%; }
-    .landing-heading { font-size: 2.6rem; }
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
+    .work-section-heading { font-size: 32px; }
   }
 `
 
-function LandingPageSection() {
-  function handleNavClick(e, target) {
-    e.preventDefault()
-    const section = document.getElementById(target)
-    if (section) {
-      const headerHeight = document.querySelector('header').offsetHeight
-      const top = section.getBoundingClientRect().top + window.scrollY - headerHeight - 12
-      window.scrollTo({ top, behavior: 'smooth' })
-    }
-  }
+function WorkCard({ skinImg: src, logo, logotext, index }) {
+  const cardRef = useRef(null)
+
+  useEffect(() => {
+    const el = cardRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => el.classList.add('in-view'), index * 80)
+          observer.unobserve(el)
+        }
+      },
+      { threshold: 0.1 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [index])
+
+  const cardingf = "https://funn-nine.vercel.app/";
+
+  return (
+    <a ref={cardRef} href={cardingf} target="_blank" className="work-card rounded-lg bg-[#0a0a0a] border border-solid border-[#232427] overflow-hidden block">
+      <div className="w-full overflow-hidden">
+        <img className="w-full work-card-img block" src={src} alt={logo} />
+      </div>
+      <div className="p-4 flex flex-col gap-1.5">
+        <div className="flex justify-between items-center">
+          <code className="text-base text-[#E5E5E5] font-semibold">{logo}</code>
+          <svg className="text-[#B5B5B5] h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+        <p className="text-[15px] text-[#B5B5B5]">{logotext}</p>
+      </div>
+    </a>
+  )
+}
+
+const cards = [
+  { src: skinImg, logo: 'SkinLovry Website',   logotext: 'Modern beauty and skincare platform designed with responsive interfaces, smooth interactions, and premium frontend structure.' },
+  { src: lastly,  logo: 'Healthcare Website',  logotext: 'Hospital management platform focused on modern web development, responsive design, and seamless healthcare interactions.' },
+  { src: fyn,     logo: 'Avenoir Website',     logotext: 'Luxury hotel experience focused on responsive systems, modern frontend development, and smooth interaction.' },
+  { src: twitter, logo: 'Velmora Experience',  logotext: 'Velmora restaurant focused on responsive systems, modern frontend development, and smooth customer interaction.' },
+  { src: dine,    logo: 'Taste Meets Elegance',logotext: 'Wine commerce platform focused on modern web development, responsive design, and seamless shopping interactions.' },
+]
+
+function Work() {
+  const titleRef = useRef(null)
+
+  useEffect(() => {
+    const el = titleRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { el.classList.add('in-view'); observer.unobserve(el) } },
+      { threshold: 0.2 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <>
-      <style>{landingStyles}</style>
-      <section id="home" className="w-full pt-36 pb-24 flex justify-center bg-[#0a0a0b]">
-        <div className="landing-wrap">
+      <style>{workStyles}</style>
+      <section className="w-full py-20 flex justify-center items-center bg-[#0a0a0b]" id="work">
+        <div className="w-[90%] flex flex-col gap-10">
 
-          <a href="" className="land-item land-badge py-1 px-3.5 rounded-full flex gap-2 items-center self-center text-[13.5px] bg-[#111114] border border-solid border-[#2a2a2e] text-[#B5B5B5] cursor-pointer hover:bg-[#16171b] transition-colors duration-300">
-            <svg className="h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
-              <path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>
-            </svg>
-            <code>Open to work</code>
-            
-          </a>
+          <div ref={titleRef} className="work-title-reveal flex justify-between">
+            <h1 className="work-section-heading text-[40px] leading-tight text-[#E5E5E5] font-semibold">Selected Work</h1>
+            <p className="work-section-para justify-right text-right text-[18px] text-[#B5B5B5] max-w-125">
+              A growing collection of interfaces and web experiences built with simplicity, structure, and usability in mind.
+            </p>
+          </div>
 
-          <h className="land-item land-heading landing-heading font-semibold text-[#E5E5E5] tracking-tight mt-3 mb-2.5">
-            Build with KemfonAbasi_
-          </h>
-
-          <p className="land-item land-para landing-para text-[#B5B5B5] leading-7 font-normal">
-            Crafting modern digital experiences focused on quality, performance, and professional web development standards.
-          </p>
-
-          {/* <div className="land-divider w-12 h-px bg-[red] my-5 self-center" /> */}
-
-          <div className="land-item land-ctas flex gap-3 items-center justify-center flex-wrap mt-6">
-            <a
-              href="#work"
-              onClick={(e) => handleNavClick(e, 'work')}
-              className="landing-btn-primary flex justify-center items-center w-32 h-9 border-0 text-[14px] leading-5 bg-[#E5E5E5] text-[#111114] font-medium rounded-lg"
-            >
-              <code>View My Work</code>
-              
-            </a>
-            <a
-              href={cv}
-              target="_blank"
-              rel="noreferrer"
-              className="landing-btn-ghost flex justify-center items-center w-32 h-9 text-[14px] leading-5 font-medium border border-solid border-[#2a2a2e] text-[#E5E5E5] rounded-lg cursor-pointer"
-            >
-              <code>Open Resume</code>
+          <div className="flex flex-col gap-10">
+            <div className="w-full box-border grid work-grid gap-8">
+              {cards.map((card, i) => (
+                <WorkCard key={card.logo} skinImg={card.src} logo={card.logo} logotext={card.logotext} index={i} />
+              ))}
+            </div>
+            <a href="" className="view-all-btn py-2 px-5 text-sm rounded-lg bg-[#111114] border border-solid border-[#2a2a2e] text-[#E5E5E5] cursor-pointer self-center" id="view-all-btn">
+              <code>View All Projects</code>
             </a>
           </div>
 
@@ -124,4 +144,4 @@ function LandingPageSection() {
   )
 }
 
-export default LandingPageSection
+export default Work
