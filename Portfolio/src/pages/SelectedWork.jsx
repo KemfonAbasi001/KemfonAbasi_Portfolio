@@ -80,7 +80,7 @@ function WorkCard({ link, src, title, text, year }) {
           <p className="text-[18px] text-[#B5B5B5]">{text}</p>
           <div className="flex justify-between border-[#515151] border-solid border-b-0 border-t-[0.5px] border-r-0 border-l-0 pt-2.75">
             <p className="font-fira text-[13px]">{year} Project</p>
-            <span className="font-fira text-[13px] flex items-center gap-0.5">VIEW LIVE PROJECT</span>
+            <span className="font-fira font-medium text-[13px] flex items-center gap-0.5">VIEW LIVE PROJECT</span>
           </div>
         </div>
       </a>
