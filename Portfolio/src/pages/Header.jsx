@@ -212,23 +212,23 @@ function HeaderSec() {
 
   return (
     <>
-      <nav className="bg-white dark:bg-[#0a0a0b] w-full flex justify-center items-center py-2.5 px-0 fixed top-0 z-200 border-[#515151] border-solid border-t-0 border-b-[0.5px] border-r-0 border-l-0">
+      <nav className="bg-[#f4f4f4] dark:bg-[#0a0a0b] w-full flex justify-center items-center py-2.5 px-0 fixed top-0 z-200 border-[#9b9b9b] dark:border-[#515151] border-solid border-t-0 border-b-[0.5px] border-r-0 border-l-0">
         <div className="w-[90%] flex justify-between items-center mx-auto my-0">
             <a href="#" className="text-[#0a0a0b] dark:text-white text-[24px] font-fira font-medium">Jonah.</a>
 
             <div className="flex gap-3 items-center justify-center">
                 <button
                   onClick={toggleTheme}
-                  className="bg-none border-none cursor-pointer text-[#0a0a0b] dark:text-[#f7f3f3]"
+                  className="bg-none border-none cursor-pointer text-[#1c1c1c] dark:text-[#f7f3f3]"
                   aria-label="Toggle theme"
                 >
                   {isDark ? <SunIcon /> : <MoonIcon />}
                 </button>
-                <button className="cursor-pointer font-fira font-medium text-[15px] bg-[#0a0a0b] dark:bg-[#f7f3f3] py-1.5 px-3.75 rounded-lg text-[white] dark:text-black" id="open-cv-btn-mobile">Hire Me</button>
+                <button className="cursor-pointer font-fira font-medium text-[15px] bg-[#1c1c1c] dark:bg-[#f7f3f3] py-1.5 px-3.75 rounded-lg text-[#f4f4f4] dark:text-black" id="open-cv-btn-mobile">Hire Me</button>
                 <button className="bg-none border-none cursor-pointer flex flex-col gap-1.25" id="menuToggle">
-                    <span className='block w-5 h-0.5 bg-[black] dark:bg-[#f7f3f3]'></span>
-                    <span className='block w-5 h-0.5 bg-[black] dark:bg-[#f7f3f3]'></span>
-                    <span className='block w-5 h-0.5 bg-[black] dark:bg-[#f7f3f3]'></span>
+                    <span className='block w-5 h-0.5 bg-[black] dark:bg-[#1c1c1c]'></span>
+                    <span className='block w-5 h-0.5 bg-[black] dark:bg-[#1c1c1c]'></span>
+                    <span className='block w-5 h-0.5 bg-[black] dark:bg-[#1c1c1c]'></span>
                 </button>
             </div>
         </div> 
