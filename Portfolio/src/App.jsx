@@ -6,6 +6,7 @@ import Work from './pages/SelectedWork'
 import About from './pages/About'
 import Stack from './pages/Techstack'
 import ProcessSection from './pages/Process'
+import Footer from './pages/Footer'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <About/>
       <Stack/>
       <ProcessSection/>
+      <Footer />
     </>
   )
 }

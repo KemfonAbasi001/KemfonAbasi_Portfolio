@@ -26,3 +26,24 @@ body::-webkit-scrollbar {
 h2{
   margin: 0;
 }
+
+#footer {
+    clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+  }
+
+.footer-giant-text {
+    position: absolute;
+    bottom: 0px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 4.04rem;
+    overflow: hidden;
+    font-weight: 900; line-height: 0.85; letter-spacing: -0.02em;
+    background: linear-gradient(
+      to bottom,
+      #E5E5E5 0%, #D0D0D0 28%, #ABABAB 48%,
+      #7a7a7a 65%, rgba(100,100,100,0.45) 80%, rgba(80,80,80,0.15) 100%
+    );
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap; pointer-events: none; z-index: 1;
+  }

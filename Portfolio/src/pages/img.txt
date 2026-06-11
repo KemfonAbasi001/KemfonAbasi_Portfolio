@@ -134,3 +134,202 @@ function Work() {
 }
 
 export default Work
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const footerStyles = `
+  #footer {
+    clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+  }
+
+  .soc-btn {
+    width: 50px; height: 50px;
+    border-radius: 16px; border: 1px solid #2a2a2e;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    background: transparent;
+    transition: background 0.25s ease, border-color 0.25s ease,
+      transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease;
+  }
+  .soc-btn svg {
+    width: 25px; height: 25px;
+    stroke: #fff; fill: #E5E5E5;
+    stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+    transition: fill 0.25s ease, stroke 0.25s ease;
+  }
+  .soc-btn:hover {
+    background: #1a1a1e; border-color: #3a3a3e;
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 6px 20px rgba(229,229,229,0.08);
+  }
+  .soc-btn:hover svg { fill: #fff; stroke: #fff; }
+
+  .footer-hire-btn {
+    display: flex; align-self: flex-end;
+    padding: 12px 40px;
+    background: #E5E5E5; color: #111114;
+    border: 0; cursor: pointer;
+    font-family: "Geist", sans-serif; text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease,
+      transform 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease;
+  }
+  .footer-hire-btn:hover {
+    background-color: #fff; color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(229,229,229,0.18);
+  }
+
+  .footer-giant-text {
+    position: absolute;
+    bottom: -30px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 12rem;
+    font-weight: 900; line-height: 0.85; letter-spacing: -0.02em;
+    background: linear-gradient(
+      to bottom,
+      #E5E5E5 0%, #D0D0D0 28%, #ABABAB 48%,
+      #7a7a7a 65%, rgba(100,100,100,0.45) 80%, rgba(80,80,80,0.15) 100%
+    );
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap; pointer-events: none; z-index: 1;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 767px) {
+    .footer-giant-text { font-size: 4rem; bottom: -12px; }
+    .footer-hire-btn   { align-self: center; padding: 12px 32px; }
+    .footer-bottom     { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-inner-gap  { gap: 48px; }
+    .footer-copy       { font-size: 13px; }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .footer-giant-text { font-size: 7rem; bottom: -20px; }
+    .footer-inner-gap  { gap: 64px; }
+  }
+`
+
+function Footer() {
+  return (
+    <>
+      <style>{footerStyles}</style>
+      <footer className="relative h-screen w-full" id="footer">
+        <div className="fixed bottom-0 left-0 h-screen w-full flex pt-20 flex-col items-center bg-[#0a0a0b]">
+          <div className="w-[90%] flex flex-col footer-inner-gap" style={{ gap: '160px' }}>
+
+            <a href="" className="footer-hire-btn">
+              <code className="tracking-[2px] font-medium">Hire Me</code>
+            </a>
+
+            <div className="footer-bottom">
+              <code className="footer-copy text-[15px] text-[#B5B5B5]">
+                &copy; <span>{new Date().getFullYear()}</span> KemfonAbasi Mfon Jonah. All rights reserved
+              </code>
+
+              <div className="flex gap-2 w-fit flex-wrap justify-center">
+                <a href="" className="soc-btn" aria-label="X / Twitter">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/>
+                  </svg>
+                </a>
+                <a href="" className="soc-btn" aria-label="Google">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path d="M564 325.8C564 467.3 467.1 568 324 568C186.8 568 76 457.2 76 320C76 182.8 186.8 72 324 72C390.8 72 447 96.5 490.3 136.9L422.8 201.8C334.5 116.6 170.3 180.6 170.3 320C170.3 406.5 239.4 476.6 324 476.6C422.2 476.6 459 406.2 464.8 369.7L324 369.7L324 284.4L560.1 284.4C562.4 297.1 564 309.3 564 325.8z"/>
+                  </svg>
+                </a>
+                <button className="soc-btn" aria-label="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path d="M316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72z"/>
+                  </svg>
+                </button>
+                <a href="" className="soc-btn" aria-label="LinkedIn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+          <div className="footer-giant-text">Let's Connect</div>
+        </div>
+      </footer>
+    </>
+  )
+}
+
+export default Footer
