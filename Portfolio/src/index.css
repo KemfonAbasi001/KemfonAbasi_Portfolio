@@ -6,6 +6,9 @@
   inherits: false;
 }
 
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ─── Base / Reset ─────────────────────────────────────────── */
 body {
   background-color: black;

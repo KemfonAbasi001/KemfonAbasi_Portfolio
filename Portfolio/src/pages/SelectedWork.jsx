@@ -65,22 +65,22 @@ const projects = [
 // ─── WorkCard Component ────────────────────────────────────────────────────────
 function WorkCard({ link, src, title, text, year }) {
   return (
-    <div className="rounded-lg bg-[#0a0a0a] border border-solid border-[#232427] overflow-hidden">
+    <div className="rounded-lg bg-white dark:bg-[#0a0a0a] border border-solid border-[#232427] overflow-hidden">
       <a href={link} target="_blank" rel="noreferrer" className="block">
         <div className="w-full overflow-hidden">
           <img className="w-full block" src={src} alt={title} />
         </div>
         <div className="p-4 flex flex-col gap-2.25">
           <div className="flex justify-between items-center">
-            <h3 className="text-[#E5E5E5] text-[18px] font-semibold">{title}</h3>
-            <svg className="text-[#B5B5B5] h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <h3 className="text-black dark:text-[#E5E5E5] text-[18px] font-semibold">{title}</h3>
+            <svg className="text-black dark:text-[#B5B5B5] h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </div>
-          <p className="text-[18px] text-[#B5B5B5]">{text}</p>
+          <p className="text-[18px] text-black dark:text-[#B5B5B5]">{text}</p>
           <div className="flex justify-between border-[#515151] border-solid border-b-0 border-t-[0.5px] border-r-0 border-l-0 pt-2.75">
-            <p className="font-fira text-[14px]">{year} Project</p>
-            <span className="font-fira font-medium text-[13px] flex items-center gap-0.5">VIEW LIVE PROJECT</span>
+            <p className="font-fira text-[14px] font-semibold text-black dark:text-white">{year} Project</p>
+            <span className="font-fira font-semibold text-[13px] text-black dark:text-white flex items-center gap-0.5">VIEW LIVE PROJECT</span>
           </div>
         </div>
       </a>
@@ -121,12 +121,12 @@ function Work() {
 
   return (
     <>
-      <section className="w-full py-20 flex justify-center items-center bg-[#0a0a0b]" id="work">
+      <section className="w-full py-20 flex justify-center items-center bg-white dark:bg-[#0a0a0b]" id="work">
         <div className="w-[90%] flex flex-col gap-10">
 
           <div className="flex flex-col gap-1">
-            <h1 className="text-[40px] leading-tight text-[#E5E5E5] font-semibold">Selected Work</h1>
-            <p className="text-[18px] text-[#B5B5B5] max-w-125">
+            <h1 className="text-[40px] leading-tight text-black dark:text-[#E5E5E5] font-semibold">Selected Work</h1>
+            <p className="text-[18px] text-black dark:text-[#B5B5B5] max-w-125">
               A growing collection of interfaces and web experiences built with simplicity, structure, and usability in mind.
             </p>
           </div>
@@ -176,7 +176,7 @@ function Work() {
           {!showAll && (
             <button
               onClick={handleViewAll}
-              className="py-2.75 px-5.5 text-sm rounded-lg bg-[#111114] border border-solid border-[#2a2a2e] text-[#E5E5E5] cursor-pointer font-medium self-center font-fira"
+              className="py-2.75 px-5.5 text-sm rounded-lg bg-white text-black dark:bg-[#111114] border border-solid border-[#2a2a2e] dark:text-[#E5E5E5] cursor-pointer font-medium self-center font-fira"
             >
               View All Projects
             </button>
