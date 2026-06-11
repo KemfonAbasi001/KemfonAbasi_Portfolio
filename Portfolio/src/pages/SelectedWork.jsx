@@ -12,7 +12,7 @@ import six from '../assets/Eden.png'
 // Add your real live URLs to each `link` field
 const projects = [
   {
-    link: "",
+    link: "https://skin-6jrj.vercel.app/",
     src: imgsrc,
     title: "SkinLovry Website",
     text: "Modern beauty and skincare platform designed with responsive interfaces, smooth interactions, and premium frontend structure.",
@@ -26,7 +26,7 @@ const projects = [
     year: "2026"
   },
   {
-    link: "",
+    link: "https://funn-fewx.vercel.app/props.html",
     src: two,
     title: "Avenoir Website",
     text: "Luxury hotel experience focused on responsive systems, modern frontend development, and smooth interaction.",
@@ -40,7 +40,7 @@ const projects = [
     year: "2026"
   },
   {
-    link: "",
+    link: "https://imbibe-wines.vercel.app/",
     src: four,
     title: "Taste Meets Elegance",
     text: "Wine commerce platform focused on modern web development, responsive design, and seamless shopping interactions.",
@@ -131,7 +131,7 @@ function Work() {
             </p>
           </div>
 
-          <div className="w-full grid grid-cols-1 gap-12 lg:grid-cols-2 xl:grid-cols-3 lg:gap-9">
+          <div className="w-full grid grid-cols-1 gap-12 lg:gap-2 lg:grid-cols-2 xl:grid-cols-3 lg:gap-9">
 
             {/* ── Always-visible first 5 cards ── */}
             {initialProjects.map(function (project) {
