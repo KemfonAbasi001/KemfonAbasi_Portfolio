@@ -70,17 +70,17 @@ function WorkCard({ link, src, title, text, year }) {
         <div className="w-full overflow-hidden">
           <img className="w-full block" src={src} alt={title} />
         </div>
-        <div className="p-4 flex flex-col gap-2.25">
+        <div className="p-4 flex flex-col gap-2.25 lg:gap-1.5">
           <div className="flex justify-between items-center">
-            <h3 className="text-[#0f0f0f] dark:text-[#E5E5E5] text-[18px] font-semibold">{title}</h3>
+            <h3 className="text-[#0f0f0f] dark:text-[#E5E5E5] text-[18px] lg:text-[16px] font-semibold">{title}</h3>
             <svg className="text-[#0f0f0f] dark:text-[#B5B5B5] h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </div>
-          <p className="text-[18px] text-[#1c1c1c] dark:text-[#B5B5B5]">{text}</p>
-          <div className="flex justify-between border-[#9b9b9b] dark:border-[#515151] border-solid border-b-0 border-t-[0.5px] border-r-0 border-l-0 pt-2.75">
-            <p className="font-fira text-[14px] font-semibold text-[#1c1c1c] dark:text-white">{year} Project</p>
-            <span className="font-fira font-semibold text-[13px] text-[#1c1c1c] dark:text-white flex items-center gap-0.5">VIEW LIVE PROJECT</span>
+          <p className="text-[18px] text-[#1c1c1c] dark:text-[#B5B5B5] lg:text-[15px]">{text}</p>
+          <div className="flex justify-between border-[#9b9b9b] dark:border-[#515151] border-solid border-b-0 border-t-[0.5px] border-r-0 border-l-0 pt-2.75 lg:mt-1.5">
+            <p className="font-fira text-[14px] lg:text-[10px] font-semibold text-[#1c1c1c] dark:text-white">{year} Project</p>
+            <span className="font-fira font-semibold text-[13px] lg:text-[10px] text-[#1c1c1c] dark:text-white flex items-center gap-0.5">VIEW LIVE PROJECT</span>
           </div>
         </div>
       </a>
@@ -131,7 +131,7 @@ function Work() {
             </p>
           </div>
 
-          <div className="w-full grid grid-cols-1 gap-12">
+          <div className="w-full grid grid-cols-1 gap-12 lg:grid-cols-2 xl:grid-cols-3 lg:gap-9">
 
             {/* ── Always-visible first 5 cards ── */}
             {initialProjects.map(function (project) {
@@ -176,7 +176,7 @@ function Work() {
           {!showAll && (
             <button
               onClick={handleViewAll}
-              className="py-2.75 px-5.5 text-sm rounded-lg bg-inherit text-black dark:bg-[#111114] border border-solid border-[#9b9b9b] dark:border-[#2a2a2e] dark:text-[#E5E5E5] cursor-pointer font-medium self-center font-fira"
+              className="py-2.75 px-5.5 text-sm lg:text-[12px] rounded-lg bg-inherit text-black dark:bg-[#111114] border border-solid border-[#9b9b9b] dark:border-[#2a2a2e] dark:text-[#E5E5E5] cursor-pointer font-medium self-center font-fira"
             >
               View All Projects
             </button>

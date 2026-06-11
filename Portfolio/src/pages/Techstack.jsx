@@ -27,12 +27,12 @@ function SkillCard(props) {
 
 function Stack() {
   return (
-    <section className="w-full pb-20 flex justify-center items-center bg-[#f4f4f4] dark:bg-[#0a0a0b]">
+    <section className="w-full pb-20 lg:pt-20 flex justify-center items-center bg-[#f4f4f4] dark:bg-[#0a0a0b]">
       <div className="w-[90%] flex flex-col">
         <p className="inline-flex items-center gap-4 text-[13px] font-fira leading-none tracking-[0.25em] font-medium mb-7.5 text-[#0f0f0f] dark:text-[#B5B5B5] uppercase">
           Technologies & Tools
         </p>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-3 md:grid-cols-4 lg:grid-cols-5">
           <SkillCard svglink={svgone} tool="HTML" />
           <SkillCard svglink={svgtwo} tool="CSS" />
           <SkillCard svglink={svgfive} tool="JavaScript" />

@@ -16,9 +16,16 @@ body {
   font-family: "Geist", sans-serif;
 }
 
-@theme {
+/* @theme {
   --font-fira: "Fira Code", monospace;;
   --font-goggle: "Google Sans", sans-serif;
+   --breakpoint-md: 800px;
+} */
+
+@theme {
+  --font-fira: "Fira Code", monospace;
+  --font-goggle: "Google Sans", sans-serif;
+  --breakpoint-md: 800px;
 }
 
 body::-webkit-scrollbar {
@@ -51,4 +58,10 @@ h2{
     background-clip: text;
     white-space: nowrap; pointer-events: none; z-index: 1;
   
+  }
+
+  @media screen and (min-width: 1024px) {
+    .footer-giant-text {
+      font-size: 11.2rem;
+    }
   }

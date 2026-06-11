@@ -3,14 +3,14 @@
 function Footer() {
   return (
     <>
-      <footer id="footer" className="relative w-full py-60 flex justify-center items-center bg-[#f4f4f4] dark:bg-[#0a0a0b]">
-        <div className="w-[90%] flex-col pb-40 fixed bottom-0">
+      <footer id="footer" className="relative w-full py-90 flex justify-center items-center bg-[#f4f4f4] dark:bg-[#0a0a0b]">
+        <div className="w-[90%] flex-col pb-40 lg:pb-60 fixed bottom-0">
 
-        <div className="w-full flex gap-17 flex-col">
+        <div className="w-full flex gap-17 lg:gap-35 flex-col">
           <a href="#" className="flex self-end py-3 px-10 bg-[#1c1c1c] text-[#f4f4f4] dark:bg-[#E5E5E5] dark:text-[#111114] cursor-pointer font-fira ">Hire Me</a>
-          <div className="flex flex-col gap-17">
+          <div className="flex flex-col gap-17 lg:gap-0 lg:flex-row lg:justify-between lg:items-center">
              <h2 className="font-fira text-[16px] text-[#1c1c1c] dark:text-[#B5B5B5]">
-                &copy; <span>{new Date().getFullYear()}</span> KemfonAbasi Mfon Jonah.<br/> All rights reserved
+                &copy; <span>{new Date().getFullYear()}</span> KemfonAbasi Mfon Jonah.<br className="block lg:hidden"/> All rights reserved
               </h2>
                <div className="flex gap-3 w-fit flex-wrap justify-center">
                 <a href="" className="w-12.5 h-12.5 rounded-2xl border border-solid border-[#9b9b9b] dark:border-[#2a2a2e] cursor-pointer flex items-center justify-center bg-transparent" aria-label="X / Twitter">
