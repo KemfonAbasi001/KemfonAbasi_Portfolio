@@ -11,9 +11,14 @@
 
 /* ─── Base / Reset ─────────────────────────────────────────── */
 body {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: #0f0f0f;
   font-family: "Geist", sans-serif;
+}
+
+.dark body {
+  background-color: #0a0a0b;
+  color: white;
 }
 
 html, body {
@@ -21,46 +26,10 @@ html, body {
   max-width: 100%;
 }
 
-/* @theme {
-  --font-fira: "Fira Code", monospace;;
-  --font-goggle: "Google Sans", sans-serif;
-   --breakpoint-md: 800px;
-} */
-
 @theme {
   --font-fira: "Fira Code", monospace;
   --font-goggle: "Google Sans", sans-serif;
-  /* --breakpoint-md: 800px; */
-
 }
-
-/* ============================================================
-   ADD THIS BLOCK TO YOUR index.css
-   (These animations cannot be done with Tailwind utility classes)
-============================================================ */
-
-/* ---------- INTRO SLIDE-UP TRANSITION ---------- */
-
-
-
-/* ---------- LIGHT MODE OVERRIDES ---------- */
-/* body.light-mode .intro {
-  background-color: white;
-}
-
-body.light-mode .intro__title span {
-  color: black;
-}
-
-body.light-mode .intro__rule {
-  border-color: black;
-}
-
-
-body::-webkit-scrollbar {
-  width: 2px;
-} */
-
 
 h2{
   margin: 0;
@@ -76,7 +45,6 @@ h2{
     transform: translateX(-50%);
     font-size: 4.6rem;
     max-width: 100vw;
-    /* font-size: 3rem; */
     overflow: hidden;
     font-weight: 900;
     line-height: 0.85; letter-spacing: -0.02em;
@@ -88,13 +56,10 @@ h2{
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text;
     white-space: nowrap; pointer-events: none; z-index: 1;
-  
   }
 
 
-
   .dark .footer-giant-text {
-    /* Dark mode override */
     background: linear-gradient(
       to bottom,
       rgb(229, 229, 229) 0%, #D0D0D0 28%, #ABABAB 48%,

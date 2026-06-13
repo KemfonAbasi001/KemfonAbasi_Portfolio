@@ -760,7 +760,7 @@ const projects = [
     year: "2026"
   },
   {
-    link: "https://funn-fewx.vercel.app/props.html",
+    link: "https://avenoir-web-site.vercel.app/",
     src: two,
     title: "Avenoir Website",
     text: "Luxury hotel experience focused on responsive systems, modern frontend development, and smooth interaction.",
@@ -788,7 +788,7 @@ const projects = [
     year: "2025"
   },
   {
-    link: "https://eden-garden-website.vercel.app/",
+    link: "https://garden-edenweb.vercel.app/",
     src: six,
     title: "Eden Garden",
     text: "A clean and responsive gardening website focused on nature-inspired design, service discovery, and effortless user experience.",

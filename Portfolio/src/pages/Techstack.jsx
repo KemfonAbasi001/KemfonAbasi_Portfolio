@@ -190,7 +190,7 @@ const show = "opacity-100 translate-y-0";
 function SkillCard({ svglink, tool, isVisible, delay }) {
   return (
     <div
-      className={`flex flex-col gap-2 justify-center items-center py-5 bg-white dark:bg-[#0a0a0a] rounded-lg border border-[#9b9b9b] dark:border-[#232427] border-solid hover:-translate-y-0.5 hover:border-[#1c1c1c] dark:hover:border-[#E5E5E5] hover:duration-200 ${base} ${isVisible ? show : hidden}`}
+      className={`flex flex-col gap-2 justify-center items-center py-5 bg-inherit dark:bg-[#0a0a0a] rounded-lg border border-[#9b9b9b] dark:border-[#232427] border-solid hover:-translate-y-0.5 hover:border-[#1c1c1c] dark:hover:border-[#E5E5E5] hover:duration-200 ${base} ${isVisible ? show : hidden}`}
       style={{ transitionDelay: isVisible ? '0ms' : delay }}
     >
       {svglink}
