@@ -162,11 +162,36 @@ const base = "transition-all duration-700 ease-out";
 const hidden = "opacity-0 translate-y-10";
 const show = "opacity-100 translate-y-0";
 
+// function SkillCard({ svglink, tool, isVisible, delay }) {
+//   return (
+//     <div
+//       className={`flex flex-col gap-2 justify-center items-center py-5 bg-white dark:bg-[#0a0a0a] rounded-lg border border-[#9b9b9b] dark:border-[#232427] border-solid ${base} ${isVisible ? show : hidden}`}
+//       style={{ transitionDelay: delay }}
+//     >
+//       {svglink}
+//       <h2 className="font-fira text-[14px] font-medium text-[#1c1c1c] dark:text-[#e8e8e8]">{tool}</h2>
+//     </div>
+//   );
+// }
+
+// function SkillCard({ svglink, tool, isVisible, delay }) {
+//   return (
+//     <div
+//       className={`flex flex-col gap-2 justify-center items-center py-5 bg-white dark:bg-[#0a0a0a] rounded-lg border border-[#9b9b9b] dark:border-[#232427] border-solid hover:-translate-y-1 hover:border-[#1c1c1c] dark:hover:border-[#E5E5E5] ${base} ${isVisible ? show : hidden}`}
+//       style={{ transitionDelay: delay }}
+//     >
+//       {svglink}
+//       <h2 className="font-fira text-[14px] font-medium text-[#1c1c1c] dark:text-[#e8e8e8]">{tool}</h2>
+//     </div>
+//   );
+// }
+
+
 function SkillCard({ svglink, tool, isVisible, delay }) {
   return (
     <div
-      className={`flex flex-col gap-2 justify-center items-center py-5 bg-white dark:bg-[#0a0a0a] rounded-lg border border-[#9b9b9b] dark:border-[#232427] border-solid ${base} ${isVisible ? show : hidden}`}
-      style={{ transitionDelay: delay }}
+      className={`flex flex-col gap-2 justify-center items-center py-5 bg-white dark:bg-[#0a0a0a] rounded-lg border border-[#9b9b9b] dark:border-[#232427] border-solid hover:-translate-y-0.5 hover:border-[#1c1c1c] dark:hover:border-[#E5E5E5] hover:duration-200 ${base} ${isVisible ? show : hidden}`}
+      style={{ transitionDelay: isVisible ? '0ms' : delay }}
     >
       {svglink}
       <h2 className="font-fira text-[14px] font-medium text-[#1c1c1c] dark:text-[#e8e8e8]">{tool}</h2>
