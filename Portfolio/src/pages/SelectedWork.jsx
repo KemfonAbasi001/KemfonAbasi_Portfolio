@@ -813,7 +813,7 @@ function ExternalLinkIcon() {
 // ─── Reusable card footer row ─────────────────────────────────────────────────
 function CardFooter({ year }) {
   return (
-    <div className="flex justify-between items-center border-[#9b9b9b] dark:border-[#515151] border-solid border-b-0 border-t-[0.5px] border-r-0 border-l-0 pt-2.75 lg:mt-1.5">
+    <div className="flex justify-between items-center border-[#9b9b9b] dark:border-[#515151] border-solid border-b-0 border-t-[0.5px] border-r-0 border-l-0 pt-2.75 mt-0.9 lg:mt-1.5">
       <p className="font-fira text-[13px] lg:text-[10px] font-semibold text-[#1c1c1c] dark:text-white">
         {year} Project
       </p>
@@ -869,7 +869,7 @@ function WorkCard({ link, src, title, text, year, animDelay }) {
           </div>
           <div className="p-4 flex flex-col gap-2.25 lg:gap-1.5">
             <div className="flex justify-between items-center">
-              <h3 className="text-[#0f0f0f] dark:text-[#E5E5E5] text-[17.2px] lg:text-[16px] font-semibold">{title}</h3>
+              <h3 className="text-[#0f0f0f] dark:text-[#E5E5E5] text-[17.8px] lg:text-[16px] font-semibold">{title}</h3>
               <svg className="text-[#0f0f0f] dark:text-[#B5B5B5] h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
@@ -925,7 +925,7 @@ function Work() {
 
           <div ref={headingRef} className="flex flex-col gap-1 self-start">
             <h1 className="text-[37px] lg:text-[40px] leading-tight text-[#0f0f0f] dark:text-[#E5E5E5] font-semibold">Selected Work</h1>
-            <p className="text-[16px] lg:text-[18px] text-[#1c1c1c] dark:text-[#B5B5B5] max-w-125">
+            <p className="text-[17px] lg:text-[18px] text-[#1c1c1c] dark:text-[#B5B5B5] max-w-125">
               A growing collection of interfaces and web experiences built with simplicity, structure, and usability in mind.
             </p>
           </div>
@@ -959,7 +959,7 @@ function Work() {
                       </div>
                       <div className="p-4 flex flex-col gap-2.25 lg:gap-1.5">
                         <div className="flex justify-between items-center">
-                          <h3 className="text-[#0f0f0f] dark:text-[#E5E5E5] text-[17.2px] lg:text-[16px] font-semibold">{project.title}</h3>
+                          <h3 className="text-[#0f0f0f] dark:text-[#E5E5E5] text-[17.8px] lg:text-[16px] font-semibold">{project.title}</h3>
                           <svg className="text-[#0f0f0f] dark:text-[#B5B5B5] h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                           </svg>
