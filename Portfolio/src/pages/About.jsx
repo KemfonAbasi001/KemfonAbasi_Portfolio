@@ -182,23 +182,23 @@ function About() {
 
           {/* ── Text block — slides in from left ── */}
           <div ref={textRef} className="flex flex-col gap-4 lg:w-[98%]">
-            <h1 className="text-[40px] leading-tight text-[#0f0f0f] dark:text-[#E5E5E5] font-semibold">
+            <h1 className="text-[36px] lg:text-[40px] leading-tight text-[#0f0f0f] dark:text-[#E5E5E5] font-semibold">
               About Me
             </h1>
-            <p className="text-[#1c1c1c] dark:text-[#B5B5B5] leading-7 text-[18px]">
+            <p className="text-[#1c1c1c] dark:text-[#B5B5B5] leading-7 text-[15.7px] lg:text-[18px]">
                 I'm KemfonAbasi Jonah — a full-stack developer focused on building modern web applications that combine thoughtful design, seamless user experiences, and scalable backend systems. I enjoy creating digital products that are both visually refined and technically reliable.
             </p>
-            <p className="text-[#1c1c1c] dark:text-[#B5B5B5] leading-7 text-[18px]">
+            <p className="text-[#1c1c1c] dark:text-[#B5B5B5] leading-7 text-[15.7px] lg:text-[18px]">
              My work spans hospitality platforms, e-commerce experiences, healthcare systems, and custom web applications. I focus on building responsive, production-ready solutions that prioritize performance, usability, and attention to detail.
               {/* My work spans hospitality platforms, e-commerce experiences, healthcare systems, and custom web applications. I enjoy transforming ideas into polished products that feel intuitive, responsive, and production-ready. */}
               {/* I approach every project thinking about the gap between what a user expects and what would actually surprise them — in the best way. Whether it's a scroll-triggered reveal, a filter transition, or a navigation that disappears at exactly the right moment, the details matter. */}
             </p>
-            <p className="text-[#1c1c1c] dark:text-[#B5B5B5] leading-7 text-[18px]">
+            <p className="text-[#1c1c1c] dark:text-[#B5B5B5] leading-7 text-[15.7px] lg:text-[18px]">
              Currently expanding my expertise across modern frontend and backend technologies while building ambitious portfolio-grade projects. I'm open to collaborations, freelance opportunities, and developer roles where quality, innovation, and craftsmanship are valued.
               {/* I believe great products are built through attention to detail — from clean architecture and performance to smooth interactions and user experience. Every project is an opportunity to create something meaningful while continuously refining my craft. */}
               {/* Currently deepening my skills across the full stack and building publicly on GitHub. Open to freelance projects and developer roles where craft is taken seriously. */}
             </p>
-            <p className="text-[#1c1c1c] dark:text-[#B5B5B5] leading-7 text-[18px]">
+            <p className="text-[#1c1c1c] dark:text-[#B5B5B5] leading-7 text-[15.7px] lg:text-[18px]">
               {/* I believe great products are built through attention to detail — from clean architecture and performance to smooth interactions and user experience. Every project is an opportunity to create something meaningful while continuously refining my craft. */}
               {/* Currently expanding my expertise across modern frontend and backend technologies while building ambitious, portfolio-grade products. Open to collaborations, freelance opportunities, and developer roles where quality, innovation, and craftsmanship are valued. */}
               {/* Currently deepening my skills across the full stack and building publicly on GitHub. Open to freelance projects and developer roles where craft is taken seriously. */}

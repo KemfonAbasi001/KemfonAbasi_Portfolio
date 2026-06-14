@@ -214,7 +214,7 @@ function Footer() {
             </a>
 
             <div className="flex flex-col gap-17 lg:gap-0 lg:flex-row lg:justify-between lg:items-center">
-              <h2 className="font-fira text-[16px] text-[#1c1c1c] dark:text-[#B5B5B5]">
+              <h2 className="font-fira text-[14.7px] lg:text-[16px] text-[#1c1c1c] dark:text-[#B5B5B5]">
                 &copy; <span>{new Date().getFullYear()}</span> KemfonAbasi Mfon Jonah.<br className="block lg:hidden"/> All rights reserved
               </h2>
               <div className="flex gap-3 w-fit flex-wrap justify-center">

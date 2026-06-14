@@ -672,46 +672,43 @@ export default function CoverPage() {
               lineHeight: '1.2',
             }}
           >
-            {/* font-size / letter-spacing / color applied via inline style on each span */}
             {[
-              { text: 'W', anim: 'intro-unblur-alt', dur: '4.2s', spaced: false },
-              { text: 'e', anim: 'intro-unblur',     dur: '3.8s', spaced: false },
-              { text: 'l', anim: 'intro-unblur-alt', dur: '4.2s', spaced: false },
-              { text: 'c', anim: 'intro-unblur',     dur: '3.8s', spaced: false },
-              { text: 'o', anim: 'intro-unblur-alt', dur: '4.2s', spaced: false },
-              { text: 'm', anim: 'intro-unblur',     dur: '3.8s', spaced: false },
-              { text: 'e', anim: 'intro-unblur-alt', dur: '4.2s', spaced: true  },
-            ].map(({ text, anim, dur, spaced }, i) => (
-              <span
-                key={i}
-                style={{
-                  ...letterStyle(anim, dur),
-                  fontSize: '3.4rem',
-                  letterSpacing: '3px',
-                  color: fg,
-                  fontWeight: 500,
-                  ...(spaced ? { marginRight: '10px' } : {}),
-                }}
-              >
-                {text}
-              </span>
-            ))}
-
+  { text: 'W', anim: 'intro-unblur-alt', dur: '4.2s', spaced: false },
+  { text: 'e', anim: 'intro-unblur',     dur: '3.8s', spaced: false },
+  { text: 'l', anim: 'intro-unblur-alt', dur: '4.2s', spaced: false },
+  { text: 'c', anim: 'intro-unblur',     dur: '3.8s', spaced: false },
+  { text: 'o', anim: 'intro-unblur-alt', dur: '4.2s', spaced: false },
+  { text: 'm', anim: 'intro-unblur',     dur: '3.8s', spaced: false },
+  { text: 'e', anim: 'intro-unblur-alt', dur: '4.2s', spaced: true  },
+].map(({ text, anim, dur, spaced }, i) => (
+  <span
+    key={i}
+    className={`text-[2.55rem] lg:text-[3.4rem] ${spaced ? 'mr-[10px]' : ''}`}
+    style={{
+      ...letterStyle(anim, dur),
+      letterSpacing: '3px',
+      color: fg,
+      fontWeight: 500,
+    }}
+  >
+    {text}
+  </span>
+))}
             {/* space between "Welcome" and "to" */}
             {' '}
 
-            <span style={{ ...letterStyle('intro-unblur', '3.8s'),     fontSize: '3.4rem', letterSpacing: '3px', color: fg, fontWeight: 500 }}>t</span>
-            <span style={{ ...letterStyle('intro-unblur-alt', '4.2s'), fontSize: '3.4rem', letterSpacing: '3px', color: fg, fontWeight: 500, marginRight: '10px' }}>o</span>
+            <span style={{ ...letterStyle('intro-unblur', '3.8s'), letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.55rem] lg:text-[3.4rem]'>t</span>
+            <span style={{ ...letterStyle('intro-unblur-alt', '4.2s'), letterSpacing: '3px', color: fg, fontWeight: 500, marginRight: '10px' }} className='text-[2.55rem] lg:text-[3.4rem]'>o</span>
 
             {' '}
 
-            <span style={{ ...letterStyle('intro-unblur', '3.8s'),     fontSize: '3.4rem', letterSpacing: '3px', color: fg, fontWeight: 500 }}>m</span>
-            <span style={{ ...letterStyle('intro-unblur-alt', '4.2s'), fontSize: '3.4rem', letterSpacing: '3px', color: fg, fontWeight: 500 }}>y</span>
+            <span style={{ ...letterStyle('intro-unblur', '3.8s'),     letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.55rem] lg:text-[3.4rem]'>m</span>
+            <span style={{ ...letterStyle('intro-unblur-alt', '4.2s'), letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.55rem] lg:text-[3.4rem]'>y</span>
 
             <br />
 
-            <span style={{ ...letterStyle('intro-unblur', '3.8s'),     fontSize: '3.4rem', letterSpacing: '3px', color: fg, fontWeight: 500 }}>Portfolio W</span>
-            <span style={{ ...letterStyle('intro-unblur-last', '4.4s'), fontSize: '3.4rem', letterSpacing: '3px', color: fg, fontWeight: 500 }}>ebsite</span>
+            <span style={{ ...letterStyle('intro-unblur', '3.8s'),     letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.55rem] lg:text-[3.4rem]'>Portfolio W</span>
+            <span style={{ ...letterStyle('intro-unblur-last', '4.4s'), letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.55rem] lg:text-[3.4rem]'>ebsite</span>
           </div>
 
           {/* ── Rule ── */}

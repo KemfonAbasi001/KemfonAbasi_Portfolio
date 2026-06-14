@@ -194,7 +194,7 @@ function SkillCard({ svglink, tool, isVisible, delay }) {
       style={{ transitionDelay: isVisible ? '0ms' : delay }}
     >
       {svglink}
-      <h2 className="font-fira text-[14px] font-medium text-[#1c1c1c] dark:text-[#e8e8e8]">{tool}</h2>
+      <h2 className="font-fira text-[12.8px] lg:text-[14px] font-medium text-[#1c1c1c] dark:text-[#e8e8e8]">{tool}</h2>
     </div>
   );
 }

@@ -753,7 +753,7 @@ const projects = [
     year: "2025"
   },
   {
-    link: "",
+    link: "https://hospital-website-zeta.vercel.app/",
     src: one,
     title: "Healthcare Website",
     text: "Hospital management platform focused on modern web development, responsive design, and seamless healthcare interactions.",
@@ -781,7 +781,7 @@ const projects = [
     year: "2026"
   },
   {
-    link: "",
+    link: "https://furniture-web-black.vercel.app/",
     src: five,
     title: "CozaStore Website",
     text: "A stylish online store delivering seamless product browsing, intuitive navigation, and a premium retail experience across devices.",
@@ -814,10 +814,10 @@ function ExternalLinkIcon() {
 function CardFooter({ year }) {
   return (
     <div className="flex justify-between items-center border-[#9b9b9b] dark:border-[#515151] border-solid border-b-0 border-t-[0.5px] border-r-0 border-l-0 pt-2.75 lg:mt-1.5">
-      <p className="font-fira text-[14px] lg:text-[10px] font-semibold text-[#1c1c1c] dark:text-white">
+      <p className="font-fira text-[12.9px] lg:text-[10px] font-semibold text-[#1c1c1c] dark:text-white">
         {year} Project
       </p>
-      <span className="font-fira font-semibold text-[13px] lg:text-[10px] text-[#1c1c1c] dark:text-white flex items-center gap-1.5">
+      <span className="font-fira font-semibold text-[11.8px] lg:text-[10px] text-[#1c1c1c] dark:text-white flex items-center gap-1.5">
         VIEW LIVE PROJECT
         <ExternalLinkIcon />
       </span>
@@ -869,12 +869,12 @@ function WorkCard({ link, src, title, text, year, animDelay }) {
           </div>
           <div className="p-4 flex flex-col gap-2.25 lg:gap-1.5">
             <div className="flex justify-between items-center">
-              <h3 className="text-[#0f0f0f] dark:text-[#E5E5E5] text-[18px] lg:text-[16px] font-semibold">{title}</h3>
+              <h3 className="text-[#0f0f0f] dark:text-[#E5E5E5] text-[16px] lg:text-[16px] font-semibold">{title}</h3>
               <svg className="text-[#0f0f0f] dark:text-[#B5B5B5] h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </div>
-            <p className="text-[18px] text-[#1c1c1c] dark:text-[#B5B5B5] lg:text-[15px]">{text}</p>
+            <p className="text-[15.7px] text-[#1c1c1c] dark:text-[#B5B5B5] lg:text-[15px]">{text}</p>
             <CardFooter year={year} />
           </div>
         </a>
@@ -924,8 +924,8 @@ function Work() {
         <div className="w-[90%] flex flex-col gap-10 items-center">
 
           <div ref={headingRef} className="flex flex-col gap-1 self-start">
-            <h1 className="text-[40px] leading-tight text-[#0f0f0f] dark:text-[#E5E5E5] font-semibold">Selected Work</h1>
-            <p className="text-[18px] text-[#1c1c1c] dark:text-[#B5B5B5] max-w-125">
+            <h1 className="text-[35px] lg:text-[40px] leading-tight text-[#0f0f0f] dark:text-[#E5E5E5] font-semibold">Selected Work</h1>
+            <p className="text-[15px] lg:text-[18px] text-[#1c1c1c] dark:text-[#B5B5B5] max-w-125">
               A growing collection of interfaces and web experiences built with simplicity, structure, and usability in mind.
             </p>
           </div>
@@ -959,12 +959,12 @@ function Work() {
                       </div>
                       <div className="p-4 flex flex-col gap-2.25 lg:gap-1.5">
                         <div className="flex justify-between items-center">
-                          <h3 className="text-[#0f0f0f] dark:text-[#E5E5E5] text-[18px] lg:text-[16px] font-semibold">{project.title}</h3>
+                          <h3 className="text-[#0f0f0f] dark:text-[#E5E5E5] text-[16px] lg:text-[16px] font-semibold">{project.title}</h3>
                           <svg className="text-[#0f0f0f] dark:text-[#B5B5B5] h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                           </svg>
                         </div>
-                        <p className="text-[18px] text-[#1c1c1c] dark:text-[#B5B5B5] lg:text-[15px]">{project.text}</p>
+                        <p className="text-[15.7px] text-[#1c1c1c] dark:text-[#B5B5B5] lg:text-[15px]">{project.text}</p>
                         <CardFooter year={project.year} />
                       </div>
                     </a>
@@ -978,7 +978,7 @@ function Work() {
             <button
               ref={btnRef}
               onClick={handleViewAll}
-              className="py-2.75 px-5.5 text-sm lg:text-[12px] rounded-lg bg-inherit text-black dark:bg-[#111114] border border-solid border-[#9b9b9b] dark:border-[#2a2a2e] dark:text-[#E5E5E5] cursor-pointer font-medium self-center font-fira"
+              className="lg:py-2.75 py-2.5 px-5.25 lg:px-5.5 text-sm lg:text-[12px] rounded-lg bg-inherit text-black dark:bg-[#111114] border border-solid border-[#9b9b9b] dark:border-[#2a2a2e] dark:text-[#E5E5E5] cursor-pointer font-medium self-center font-fira"
             >
               View All Projects
             </button>
