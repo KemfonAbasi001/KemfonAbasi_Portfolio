@@ -3604,7 +3604,7 @@ const handleNavClick = (e, target) => {
 >
         <div className="w-[90%] flex justify-between items-center mx-auto my-0">
           {/* <a href="#" className="text-[#0a0a0b] dark:text-white text-[24px] font-fira font-medium lg:text-[20px]">Jonah.</a> */}
-          <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="text-[#0a0a0b] dark:text-white text-[24px] font-fira font-medium lg:text-[20px]">Jonah.</a>
+          <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="text-[#0a0a0b] dark:text-white text-[21px] font-fira font-medium lg:text-[20px]">Jonah.</a>
 
           {/* Desktop nav links */}
           <ul className="hidden lg:flex gap-3 items-center justify-center lg:gap-6">
@@ -3646,7 +3646,7 @@ const handleNavClick = (e, target) => {
             >
               {isDark ? <SunIcon /> : <MoonIcon />}
             </button>
-            <a href="#footer" onClick={(e) => handleNavClick(e, 'footer')} className="cursor-pointer font-fira font-medium text-[15px] lg:text-[14px] bg-[#1c1c1c] dark:bg-[#f7f3f3] py-1.5 px-3.75 rounded-lg text-[#f4f4f4] dark:text-black">Hire Me</a>
+            <a href="#footer" onClick={(e) => handleNavClick(e, 'footer')} className="cursor-pointer font-fira font-medium text-[13.6px] lg:text-[14px] bg-[#1c1c1c] dark:bg-[#f7f3f3] py-1.5 px-3.75 rounded-lg text-[#f4f4f4] dark:text-black">Hire Me</a>
 
             {/* Animated hamburger button */}
             <button
