@@ -339,7 +339,7 @@ function LandingPageSection() {
           <div
             ref={badgeRef}
             style={{ opacity: 0, transform: 'translateY(28px)' }}
-            className="font-fira py-0.5 px-2 lg:py-1 lg:px-3.5 rounded-full flex gap-2 items-center lg:text-[12.5px] text-[14px] bg-inherit dark:bg-[#111114] border border-solid border-[#9b9b9b] dark:border-[#2a2a2e] text-[#1c1c1c] dark:text-[#B5B5B5] cursor-pointer"
+            className="font-fira py-0.7 px-2.6 lg:py-1 lg:px-3.5 rounded-full flex gap-2 items-center lg:text-[12.5px] text-[14px] bg-inherit dark:bg-[#111114] border border-solid border-[#9b9b9b] dark:border-[#2a2a2e] text-[#1c1c1c] dark:text-[#B5B5B5] cursor-pointer"
           >
             <svg className="h-4 lg:h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
@@ -355,7 +355,7 @@ function LandingPageSection() {
           <h1
             ref={headingRef}
             style={{ opacity: 0, transform: 'translateY(28px)' }}
-            className="font-goggle text-[2.06rem] lg:text-[2.7rem] leading-13.75 font-semibold text-[#0f0f0f] dark:text-[#E5E5E5] tracking-tight mt-4 mb-3 lg:mt-2 lg:mb-1"
+            className="font-goggle text-[2.2rem] lg:text-[2.7rem] leading-13.75 font-semibold text-[#0f0f0f] dark:text-[#E5E5E5] tracking-tight mt-4 mb-3 lg:mt-2 lg:mb-1"
           >
             Build with KemfonAbasi_
           </h1>
@@ -364,7 +364,7 @@ function LandingPageSection() {
           <p
             ref={subRef}
             style={{ opacity: 0, transform: 'translateY(28px)' }}
-            className="text-[#1c1c1c] dark:text-[#B5B5B5] text-[1.09rem] lg:text-[1.15rem] leading-7 font-normal"
+            className="text-[#1c1c1c] dark:text-[#B5B5B5] text-[1.1rem] lg:text-[1.15rem] leading-7 font-normal"
           >
             Crafting modern digital experiences focused on quality, performance, and
             <br className="md:block hidden lg:block" /> professional web development standards.
@@ -380,7 +380,7 @@ function LandingPageSection() {
             <a
               href="#work"
               onClick={handleViewWork}
-              className="font-fira py-2.5 px-4.5 lg:py-1.75 lg:px-3.25 lg:text-[13px] border-0 text-[13.7px] leading-5 bg-[#1c1c1c] text-[#f4f4f4] dark:bg-[#E5E5E5] dark:text-[#111114] font-medium rounded-lg cursor-pointer"
+              className="font-fira py-2.5 px-4.5 lg:py-1.75 lg:px-3.25 lg:text-[13px] border-0 text-[14px] leading-5 bg-[#1c1c1c] text-[#f4f4f4] dark:bg-[#E5E5E5] dark:text-[#111114] font-medium rounded-lg cursor-pointer"
             >
               View My Work
             </a>
@@ -388,7 +388,7 @@ function LandingPageSection() {
               href={cv}
               target="_blank"
               rel="noreferrer"
-              className="font-fira py-2.5 px-4.5 lg:py-1.75 lg:px-3.25 lg:text-[13px] text-[13.7px] leading-5 font-medium border border-solid border-[#9b9b9b] dark:border-[#2a2a2e] text-[#1c1c1c] dark:text-[#E5E5E5] rounded-lg cursor-pointer"
+              className="font-fira py-2.5 px-4.5 lg:py-1.75 lg:px-3.25 lg:text-[13px] text-[14px] leading-5 font-medium border border-solid border-[#9b9b9b] dark:border-[#2a2a2e] text-[#1c1c1c] dark:text-[#E5E5E5] rounded-lg cursor-pointer"
             >
               Open Resume
             </a>
