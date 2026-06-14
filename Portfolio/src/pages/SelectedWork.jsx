@@ -813,7 +813,7 @@ function ExternalLinkIcon() {
 // ─── Reusable card footer row ─────────────────────────────────────────────────
 function CardFooter({ year }) {
   return (
-    <div className="flex justify-between items-center border-[#9b9b9b] dark:border-[#515151] border-solid border-b-0 border-t-[0.5px] border-r-0 border-l-0 pt-2.75 mt-0.9 lg:mt-1.5">
+    <div className="flex justify-between items-center border-[#9b9b9b] dark:border-[#515151] border-solid border-b-0 border-t-[0.5px] border-r-0 border-l-0 pt-2.75 mt-1.25 lg:mt-1.5">
       <p className="font-fira text-[13px] lg:text-[10px] font-semibold text-[#1c1c1c] dark:text-white">
         {year} Project
       </p>

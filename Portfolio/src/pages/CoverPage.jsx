@@ -683,7 +683,7 @@ export default function CoverPage() {
 ].map(({ text, anim, dur, spaced }, i) => (
   <span
     key={i}
-    className={`text-[2.55rem] lg:text-[3.4rem] ${spaced ? 'mr-[10px]' : ''}`}
+    className={`text-[2.6rem] lg:text-[3.4rem] ${spaced ? 'mr-[10px]' : ''}`}
     style={{
       ...letterStyle(anim, dur),
       letterSpacing: '3px',
@@ -697,18 +697,18 @@ export default function CoverPage() {
             {/* space between "Welcome" and "to" */}
             {' '}
 
-            <span style={{ ...letterStyle('intro-unblur', '3.8s'), letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.55rem] lg:text-[3.4rem]'>t</span>
-            <span style={{ ...letterStyle('intro-unblur-alt', '4.2s'), letterSpacing: '3px', color: fg, fontWeight: 500, marginRight: '10px' }} className='text-[2.55rem] lg:text-[3.4rem]'>o</span>
+            <span style={{ ...letterStyle('intro-unblur', '3.8s'), letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.62rem] lg:text-[3.4rem]'>t</span>
+            <span style={{ ...letterStyle('intro-unblur-alt', '4.2s'), letterSpacing: '3px', color: fg, fontWeight: 500, marginRight: '10px' }} className='text-[2.62rem] lg:text-[3.4rem]'>o</span>
 
             {' '}
 
-            <span style={{ ...letterStyle('intro-unblur', '3.8s'),     letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.55rem] lg:text-[3.4rem]'>m</span>
+            <span style={{ ...letterStyle('intro-unblur', '3.8s'),     letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.62rem] lg:text-[3.4rem]'>m</span>
             <span style={{ ...letterStyle('intro-unblur-alt', '4.2s'), letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.55rem] lg:text-[3.4rem]'>y</span>
 
             <br />
 
-            <span style={{ ...letterStyle('intro-unblur', '3.8s'),     letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.55rem] lg:text-[3.4rem]'>Portfolio W</span>
-            <span style={{ ...letterStyle('intro-unblur-last', '4.4s'), letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.55rem] lg:text-[3.4rem]'>ebsite</span>
+            <span style={{ ...letterStyle('intro-unblur', '3.8s'),     letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.62rem] lg:text-[3.4rem]'>Portfolio W</span>
+            <span style={{ ...letterStyle('intro-unblur-last', '4.4s'), letterSpacing: '3px', color: fg, fontWeight: 500 }} className='text-[2.62rem] lg:text-[3.4rem]'>ebsite</span>
           </div>
 
           {/* ── Rule ── */}
