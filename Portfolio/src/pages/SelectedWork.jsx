@@ -934,8 +934,8 @@ function Work() {
         <div className="w-[90%] flex flex-col gap-10 items-center">
 
           <div ref={headingRef} className="flex flex-col gap-1 self-start">
-            <h1 className="text-[37px] lg:text-[40px] leading-tight text-[#0f0f0f] dark:text-[#E5E5E5] font-semibold">Selected Work</h1>
-            <p className="text-[17px] lg:text-[18px] text-[#1c1c1c] dark:text-[#B5B5B5] max-w-125">
+            <h1 className="text-[34.7px] lg:text-[40px] leading-tight text-[#0f0f0f] dark:text-[#E5E5E5] font-semibold">Selected Work</h1>
+            <p className="text-[15.6px] lg:text-[18px] text-[#1c1c1c] dark:text-[#B5B5B5] max-w-125">
               A growing collection of interfaces and web experiences built with simplicity, structure, and usability in mind.
             </p>
           </div>
