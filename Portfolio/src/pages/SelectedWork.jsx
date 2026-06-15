@@ -747,7 +747,7 @@ import six from '../assets/Eden.webp'
 const projects = [
   
   {
-    link: "https://hospital-web-site.vercel.app/",
+    link: "https://hospital-web-site.vercel.app",
     src: one,
     title: "Healthcare Website",
     text: "Hospital management platform focused on modern web development, responsive design, and seamless healthcare interactions.",
