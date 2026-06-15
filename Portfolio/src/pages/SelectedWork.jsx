@@ -965,7 +965,14 @@ function Work() {
                   <div className="rounded-lg bg-inherit dark:bg-[#0a0a0a] border border-solid dark:border-[#232427] border-[#9b9b9b] overflow-hidden">
                     <a href={project.link} target="_blank" rel="noreferrer" className="block">
                       <div className="w-full overflow-hidden">
-                        <img className="w-full block" src={project.src} alt={project.title} />
+                        <img 
+                          className="w-full block" 
+                          src={project.src} 
+                          alt={project.title}
+                          width="800"
+                          height="600"
+                          loading="lazy"
+                        />
                       </div>
                       <div className="p-4 flex flex-col gap-2.25 lg:gap-1.5">
                         <div className="flex justify-between items-center">
