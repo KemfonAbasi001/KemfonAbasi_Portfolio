@@ -134,7 +134,7 @@
 
 
 import { useEffect, useRef } from "react";
-import me from "../assets/IMG-20251221-WA0035.jpg";
+import me from "../assets/IMG-20251221-WA0035.webP";
 
 // ─── Hook: slide in from a direction once element enters viewport ──────────────
 function useSlideIn(ref, { direction = 'left', delay = 0, threshold = 0.15 } = {}) {
