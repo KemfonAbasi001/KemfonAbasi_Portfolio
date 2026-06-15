@@ -767,7 +767,7 @@ const projects = [
     year: "2026"
   },
   {
-    link: "",
+    link: "https://velmora-web-site.vercel.app/",
     src: three,
     title: "Velmora Experience",
     text: "Velmora restaurant focused on responsive systems, modern frontend development, and smooth customer interaction.",
