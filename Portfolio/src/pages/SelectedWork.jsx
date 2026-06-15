@@ -745,25 +745,12 @@ import five from '../assets/log.png'
 import six from '../assets/Eden.png'
 
 const projects = [
-  {
-    link: "https://skin-6jrj.vercel.app/",
-    src: imgsrc,
-    title: "SkinLovry Website",
-    text: "Modern beauty and skincare platform designed with responsive interfaces, smooth interactions, and premium frontend structure.",
-    year: "2025"
-  },
+  
   {
     link: "https://hospital-website-zeta.vercel.app/",
     src: one,
     title: "Healthcare Website",
     text: "Hospital management platform focused on modern web development, responsive design, and seamless healthcare interactions.",
-    year: "2026"
-  },
-  {
-    link: "https://avenoir-web-site.vercel.app/",
-    src: two,
-    title: "Avenoir Website",
-    text: "Luxury hotel experience focused on responsive systems, modern frontend development, and smooth interaction.",
     year: "2026"
   },
   {
@@ -781,18 +768,33 @@ const projects = [
     year: "2026"
   },
   {
+    link: "https://garden-edenweb.vercel.app/",
+    src: six,
+    title: "Eden Garden",
+    text: "A clean and responsive gardening website focused on nature-inspired design, service discovery, and effortless user experience.",
+    year: "2026"
+  },
+  {
     link: "https://furniture-web-black.vercel.app/",
     src: five,
     title: "CozaStore Website",
     text: "A stylish online store delivering seamless product browsing, intuitive navigation, and a premium retail experience across devices.",
     year: "2025"
   },
+  
   {
-    link: "https://garden-edenweb.vercel.app/",
-    src: six,
-    title: "Eden Garden",
-    text: "A clean and responsive gardening website focused on nature-inspired design, service discovery, and effortless user experience.",
+    link: "https://avenoir-web-site.vercel.app/",
+    src: two,
+    title: "Avenoir Website",
+    text: "Luxury hotel experience focused on responsive systems, modern frontend development, and smooth interaction.",
     year: "2026"
+  },
+  {
+    link: "https://skin-6jrj.vercel.app/",
+    src: imgsrc,
+    title: "SkinLovry Website",
+    text: "Modern beauty and skincare platform designed with responsive interfaces, smooth interactions, and premium frontend structure.",
+    year: "2025"
   }
 ]
 

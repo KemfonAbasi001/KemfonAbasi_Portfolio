@@ -26,6 +26,10 @@ html, body {
   max-width: 100%;
 }
 
+body::-webkit-scrollbar {
+    width: 2px;
+}
+
 @theme {
   --font-fira: "Fira Code", monospace;
   --font-goggle: "Google Sans", sans-serif;

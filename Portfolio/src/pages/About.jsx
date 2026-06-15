@@ -186,7 +186,7 @@ function About() {
               About Me
             </h1>
             <p className="text-[#1c1c1c] dark:text-[#B5B5B5] leading-7 text-[16.5px] lg:text-[18px]">
-                I'm KemfonAbasi Jonah — a full-stack developer focused on building modern web applications that combine thoughtful design, seamless user experiences, and scalable backend systems. I enjoy creating digital products that are both visually refined and technically reliable.
+                I'm KemfonAbasi Jonah — a web developer focused on building modern web applications that combine thoughtful design, seamless user experiences, and scalable backend systems. I enjoy creating digital products that are both visually refined and technically reliable.
             </p>
             <p className="text-[#1c1c1c] dark:text-[#B5B5B5] leading-7 text-[16.5px] lg:text-[18px]">
              My work spans hospitality platforms, e-commerce experiences, healthcare systems, and custom web applications. I focus on building responsive, production-ready solutions that prioritize performance, usability, and attention to detail.
