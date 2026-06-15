@@ -207,7 +207,15 @@ function About() {
 
           {/* ── Image — slides in from right ── */}
           <div ref={imgRef} className="img">
-            <img src={me} alt="KemfonAbasi Jonah" className="block" />
+            <img 
+              className="block" 
+              src={me} 
+              alt="KemfonAbasi Jonah"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+            {/* <img src={me} alt="KemfonAbasi Jonah" className="block" /> */}
           </div>
 
         </div>

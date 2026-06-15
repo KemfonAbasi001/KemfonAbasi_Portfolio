@@ -736,13 +736,13 @@
 
 import { useState, useEffect, useRef } from 'react'
 
-import imgsrc from '../assets/skin.png'
-import one from '../assets/lastly.png'
-import two from '../assets/fyn.png'
-import three from '../assets/twitter_post.png'
-import four from '../assets/dine.png'
-import five from '../assets/log.png'
-import six from '../assets/Eden.png'
+import imgsrc from '../assets/skin.webp'
+import one from '../assets/lastly.webp'
+import two from '../assets/fyn.webp'
+import three from '../assets/twitter_post.webp'
+import four from '../assets/dine.webp'
+import five from '../assets/log.webp'
+import six from '../assets/Eden.webp'
 
 const projects = [
   
@@ -867,7 +867,15 @@ function WorkCard({ link, src, title, text, year, animDelay }) {
       <div className="rounded-lg bg-inherit dark:bg-[#0a0a0a] border border-solid dark:border-[#232427] border-[#9b9b9b] overflow-hidden">
         <a href={link} target="_blank" rel="noreferrer" className="block">
           <div className="w-full overflow-hidden">
-            <img className="w-full block" src={src} alt={title} />
+            {/* <img className="w-full block" src={src} alt={title} /> */}
+            <img 
+              className="w-full block" 
+              src={src} 
+              alt={title}
+              width="800"
+              height="600"
+              loading="lazy"
+            />
           </div>
           <div className="p-4 flex flex-col gap-2.25 lg:gap-1.5">
             <div className="flex justify-between items-center">
