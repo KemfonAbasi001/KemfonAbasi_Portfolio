@@ -277,7 +277,7 @@
 
 import { useEffect, useRef } from 'react'
 import { useIntro } from '../context/IntroContext'
-import cv from '../assets/Kemfon-resume.pdf'
+import cv from '../assets/Kemfon_Resume.pdf'
 
 function LandingPageSection() {
   const { introDone } = useIntro()
@@ -355,7 +355,7 @@ function LandingPageSection() {
           <h1
             ref={headingRef}
             style={{ opacity: 0, transform: 'translateY(28px)' }}
-            className="font-goggle text-[2rem] lg:text-[2.7rem] leading-10 font-semibold text-[#0f0f0f] dark:text-[#E5E5E5] tracking-tight mt-4 mb-3 lg:mt-2 lg:mb-1"
+            className="font-goggle text-[2rem] lg:text-[2.7rem] leading-10 font-semibold text-[#0f0f0f] dark:text-[#E5E5E5] tracking-tight mt-4 mb-3 lg:mt-5 lg:mb-3"
           >
             Build with KemfonAbasi_
           </h1>
