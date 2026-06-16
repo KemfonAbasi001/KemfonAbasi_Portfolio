@@ -277,7 +277,7 @@
 
 import { useEffect, useRef } from 'react'
 import { useIntro } from '../context/IntroContext'
-import cv from '../assets/KemfonAbasiCV.pdf'
+import cv from '../assets/Kemfon-resume.pdf'
 
 function LandingPageSection() {
   const { introDone } = useIntro()
