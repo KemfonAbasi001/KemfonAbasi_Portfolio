@@ -1,30 +1,13 @@
 import { useEffect } from 'react'
 import { useIntro } from '../context/IntroContext'
 
-/**
- * useCinematicReveal
- *
- * Drop this hook into any page/section component that uses .cin-reveal elements.
- * It watches `introDone` from context and only starts the IntersectionObserver
- * once the intro has slid away.
- *
- * Usage:
- *   import { useCinematicReveal } from '../hooks/useCinematicReveal'
- *
- *   export default function Work() {
- *     useCinematicReveal()
- *     return ( ... your JSX with cin-reveal classes ... )
- *   }
- */
 export function useCinematicReveal() {
   const { introDone } = useIntro()
 
   useEffect(() => {
-    if (!introDone) return   // ← wait until intro is gone
+    if (!introDone) return
 
-    // Give the DOM one frame to paint before observing
     const frameId = requestAnimationFrame(() => {
-      // Add cin-reveal + stagger delays to work cards
       document.querySelectorAll('.work__card').forEach((card, i) => {
         card.classList.add('cin-reveal')
         card.dataset.cinDelay = i * 90
@@ -55,5 +38,5 @@ export function useCinematicReveal() {
     })
 
     return () => cancelAnimationFrame(frameId)
-  }, [introDone])  // ← only fires once introDone flips to true
+  }, [introDone]) 
 }
