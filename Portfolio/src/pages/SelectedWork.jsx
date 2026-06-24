@@ -47,7 +47,7 @@ const projects = [
   },
   
   {
-    link: "https://avenoir-web-site.vercel.app/",
+    link: "https://avenoir-web-sitee.vercel.app/",
     src: two,
     title: "Avenoir Website",
     text: "Luxury hotel experience focused on responsive systems, modern frontend development, and smooth interaction.",
